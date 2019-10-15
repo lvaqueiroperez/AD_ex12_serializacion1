@@ -8,7 +8,7 @@ public class Ex12_serializacion1 {
 
         MClase obj1 = new MClase("ola", -7, 2.7E10);
 
-        FileOutputStream escribir1 = new FileOutputStream("C:\\Users\\luis-\\Desktop\\2ºDAM\\AD\\ex12\\serial.txt");
+        FileOutputStream escribir1 = new FileOutputStream("/home/oracle/Desktop/ex12/serial.txt");
         ObjectOutputStream escribirOOS = new ObjectOutputStream(escribir1);
 
         //El método "writeObject()" de la Clase ObjectOutputStream nos permite escribir un objeto/instancia
@@ -19,7 +19,7 @@ public class Ex12_serializacion1 {
 
         MClase obj2 = new MClase();
 
-        FileInputStream leer1 = new FileInputStream("C:\\Users\\luis-\\Desktop\\2ºDAM\\AD\\ex12\\serial.txt");
+        FileInputStream leer1 = new FileInputStream("/home/oracle/Desktop/ex12/serial.txt");
         ObjectInputStream leerOOS = new ObjectInputStream(leer1);
 
         //Ahora, con el método "readObject()" de la Clase ObjectInputStream podemos
@@ -39,6 +39,8 @@ public class Ex12_serializacion1 {
 //Podemos declarar clases fuera de la Clase principal si no lo ponemos "public"
 //Las clases con public tienen que ser Clases internas o estar en un fichero
 //distinto
+//Para que un objeto sea serializable, tenemos que implementar la interfaz
+//"Serializable" en la Clase de ese objeto
 class MClase implements Serializable {
 
     private String nome;
